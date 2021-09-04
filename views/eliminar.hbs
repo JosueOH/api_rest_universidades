@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <a class="navbar-brand" href="#">Universidad</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Inicio</a>
+        <a class="nav-item nav-link" href="/nuevo">Nuevo</a>
+        <a class="nav-item nav-link" href="/modificar">Modificar</a>
+        <a class="nav-item nav-link active" href="/eliminar">Eliminar</a>
+      </div>
+    </div>
+  </nav>
+
+<div class="alert alert-primary" role="alert" margin-top="100px">
+  <label>Llena los campos</label>
+  <form action= "/eliminar/d" method="POST">
+  <div class="form-group">
+   <input type="text" class="form-control"  placeholder="Id de la universidad que se va a eliminar" id="nombreCompleto" name="nombreCompleto"></div>
+
+  <button type="submit" class="btn btn-primary">Mandar</button>
+</form>
+</div>
+
+<table class="table table-bordered">
+          <thead>
+          <tr>
+            <th scope="col"> #ID </th>
+               <th scope="col"> Nombre completo </th>
+          </tr>
+          </thead>
+    <tbody>
+<div class = "container-fluid">
+  {{#each info}}
+      <tr>
+      <th scope="row">{{_id}}</th>
+      <td>{{nombreCompleto}}</td>
+    </tr>
+     {{/each}}
+</div>
+  </tbody>
+</table>
+

@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <a class="navbar-brand" href="#">Universidad</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Inicio</a>
+        <a class="nav-item nav-link" href="/nuevo">Nuevo</a>
+        <a class="nav-item nav-link active" href="/modificar">Modificar</a>
+        <a class="nav-item nav-link" href="/eliminar">Eliminar</a>
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+  {{#each data}}
+  <h4 class="text-uppercase text-center">Modificar universidad</h4>
+  <form action="/modificar/m" method="POST" class="form-horizontal">
+    <div class="form-group">
+      <label for="nombreCompleto">ID (este valor no es editable):</label>
+      <input type="text" id="_id"2 name="_id2" class="form-control" value="{{_id}}" readonly
+      autofocus>
+    </div>
+    <div class="form-group">
+      <label for="nombreCompleto">Nombre:</label>
+      <input type="text" id="nombreCompleto2" name="nombreCompleto2" class="form-control" value="{{nombreCompleto}}"
+      autofocus>
+    </div>
+    <div class="form-group">
+      <label for="siglas">Siglas:</label>
+      <input type="text" id="siglas2" name="siglas2" class="form-control" value="{{siglas}}">
+    </div>
+
+    <div class= "form-gruop row">
+      <p><label for=""> Nivel:</label></p>
+      <p><label for="Licenciatura" class="col-2 col-form-label"> Licenciatura</label>
+      <input type="text" placeholder="true/false" class="form-control" id="Licenciatura2" name="Licenciatura2" value="{{nivel.Licenciatura}}">
+      <label for="" class="col-2 col-form-label"> Maestria</label>
+      <input type="text" placeholder="true/false" class="form-control" id="Maestria2" name="Maestria2" value="{{nivel.Maestria}}">
+      <label for="" class="col-2 col-form-label"> Doctorado</label>
+      <input type="text" placeholder="true/false" class="form-control" id="Doctorado2" name="Doctorado2" value = "{{nivel.Doctorado}}">
+      <label for="" class="col-2 col-form-label"> PosDoctorado</label>
+      <input type="text" placeholder="true/false" class="form-control" id="PosDoctorado2" name="PosDoctorado2" value="{{nivel.PosDoctorado}}"></p>
+    </div>
+
+    <div class="form-group">
+      <label for="rankingNacional">Ranking Nacional:</label>
+      <input type="text" id="rankingNacional2" name="rankingNacional2" class="form-control" value="{{rankingNacional}}">
+    </div>
+    <div class="form-group">
+      <label for="numeroDeAlumnos">Número de alumnos:</label>
+      <input type="text" class="form-control" value="{{numeroDeAlumnos}}" id="numeroDeAlumnos2" name="numeroDeAlumnos2">
+    </div>
+
+    <div class= "form-gruop row">
+      <p><label for=""> Con posgrado:</label></p>
+
+      <p><label for="disponible" class="col-2 col-form-label"> Disponible </label>
+      <input type="text" placeholder="true/false"  class="form-control" id="disponible2" name="disponible2" value = "{{conPosgrado.disponible}}">
+
+      <label for="" class="col-2 col-form-label"> cantidad </label>
+      <input type="text"   class="form-control" value="{{conPosgrado.cantidad}}" id="cantidad2" name="cantidad2"></p>
+    </div>
+    
+    <div class="form-group">
+      <label for="prestigio">Prestigio:</label>
+      <input type="text" class="form-control" value="{{prestigio}}" id="prestigio2" name="prestigio2">
+    </div>
+    <div>
+      <button type="submit" name="button" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
+  {{/each}}
+</div>
+
+<!--
+<table class="table table-bordered">
+          <thead>
+          <tr>
+            <th scope="col"> #ID </th>
+               <th scope="col"> Nombre completo </th>
+          </tr>
+          </thead>
+    <tbody>
+<div class = "container-fluid">
+  {{#each info}}
+      <tr>
+      <th scope="row">{{_id}}</th>
+      <td>{{nombreCompleto}}</td>
+    </tr>
+     {{/each}}
+</div>
+  </tbody>-->

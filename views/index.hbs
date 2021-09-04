@@ -1,0 +1,91 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <a class="navbar-brand" href="#">Universidad</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/">Inicio</a>
+        <a class="nav-item nav-link" href="/nuevo">Nuevo</a>
+        <a class="nav-item nav-link" href="/modificar">Modificar</a>
+        <a class="nav-item nav-link" href="/eliminar">Eliminar</a>
+
+      </div>
+    </div>
+  </nav>
+
+<div class="alert alert-info" role="alert" margin-top="25%">
+<p class="text-center">Catalogo de universidades</p>
+</div>
+
+
+  <table class="table table-striped">
+          <thead class="thead-dark">
+          <tr>
+               <th scope="col"> # </th>
+               <th scope="col"> Nombre completo </th>
+               <th scope="col"> Siglas</th>
+               <th scope="col"> Nivel/Licenciatura </th>
+               <th scope="col"> Nivel/Maestría </th>
+               <th scope="col"> Nivel/Doctorado </th>
+               <th scope="col"> Nivel/PosDoctorado </th>
+               <th scope="col"> Ranking Nacional </th>
+               <th scope="col"> Numero de alumnos </th>
+               <th scope="col"> Con posgrado/disponible </th>
+               <th scope="col"> Con posgrado/Cantidad </th>
+               <th scope="col"> Prestigio</th>
+
+          </tr>
+          </thead>
+
+    <tbody>
+<div class = "container-fluid">
+  {{#each info}}
+
+      <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{nombreCompleto}}</td>
+      <td>{{siglas}}</td>
+      <td>
+      {{#if nivel.Licenciatura}}
+      si
+      {{else}}
+      no
+      {{/if}}
+      </td>
+      <td>
+      {{#if nivel.Maestria}}
+      si
+      {{else}}
+      no
+      {{/if}}
+      </td>
+      <td>
+      {{#if nivel.Doctorado}}
+      si
+      {{else}}
+      no
+      {{/if}}</td>
+      <td>
+      {{#if nivel.PosDoctorado}}
+      si
+      {{else}}
+      no
+      {{/if}}</td>
+      <td>{{rankingNacional}}</td>
+      <td>{{numeroDeAlumnos}}</td>
+      <td>
+      {{#if conPosgrado.disponible}}
+      si
+      {{else}}
+      no
+      {{/if}}</td>
+      <td>{{conPosgrado.cantidad}}</td>
+      <td>{{prestigio}}</td>
+
+    </tr>
+     {{/each}}
+</div>
+  </tbody>
+</table>
